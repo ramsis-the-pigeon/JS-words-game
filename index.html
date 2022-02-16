@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/style.css">
+    
+</head>
+<body>
+    <div class="content">
+        <h1 class="header">first letter game</h1>
+        <div class="how-to" id="how-to">
+            <h3 >how to play</h3>
+            <p class="hello">a random letter will show in your screen, you have to write words 
+            that starts with the same letter</p>
+            <p>once you hit the button bellow, a timer will fire, your task is 
+            to fill all areas befor time ends</p>
+        </div>
+        <div class="game-info">
+            <button class="btn" id="startGame" >Generate letter</button>
+            <h1 id="new-letter">Click the button for new letter</h1>
+            <h2 id="timeout"></h2>
+        </div>
+        
+        <div class="container">
+            <div class="box1">
+                <h3>Boy</h3>
+                <input type="text" id="inputBoy">
+            </div>
+            <div class="box2">
+                <h3>Girl</h3>
+                <input type="text" id="inputGirl">
+            </div>
+            <div class="box3">
+                <h3>Fruit</h3>
+                <input type="text" id="inputFruit">
+            </div>
+            <div class="box3">
+                <h3>Vegetable</h3>
+                <input type="text" id="inputVeg">
+            </div>
+            <div class="box1">
+                <h3>Object</h3>
+                <input type="text" id="inputObject">
+            </div>
+            <div class="box2">
+                <h3>Animal</h3>
+                <input type="text" id="inputAnimal">
+            </div>
+            <div class="box3">
+                <h3>Job</h3>
+                <input type="text" id="inputJob">
+            </div>
+            <div class="box3">
+                <h3>Country</h3>
+                <input type="text" id="inputCountry">
+            </div>
+        </div>
+
+        <div class="game-result">
+            <button class="btn check" onclick="getInputValue();">Check</button>
+            <h2 id="result"></h2>
+            <button class="btn" id="restart">restart</button>
+        </div>
+        
+        
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
