@@ -4,69 +4,96 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles/style.css">
-    
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
-    <div class="content">
-        <h1 class="header">first letter game</h1>
-        <div class="how-to" id="how-to">
-            <h3 >how to play</h3>
-            <p class="hello">a random letter will show in your screen, you have to write words 
-            that starts with the same letter</p>
-            <p>once you hit the button bellow, a timer will fire, your task is 
-            to fill all areas befor time ends</p>
-        </div>
-        <div class="game-info">
-            <button class="btn" id="startGame" >Generate letter</button>
-            <h1 id="new-letter">Click the button for new letter</h1>
-            <h2 id="timeout"></h2>
-        </div>
-        
-        <div class="container">
-            <div class="box1">
-                <h3>Boy</h3>
-                <input type="text" id="inputBoy">
+    <div class="container">
+        <div class="how-to">
+            <div class="how-to-header" id="header">
+                <h3>How to play</h3>
             </div>
-            <div class="box2">
-                <h3>Girl</h3>
-                <input type="text" id="inputGirl">
-            </div>
-            <div class="box3">
-                <h3>Fruit</h3>
-                <input type="text" id="inputFruit">
-            </div>
-            <div class="box3">
-                <h3>Vegetable</h3>
-                <input type="text" id="inputVeg">
-            </div>
-            <div class="box1">
-                <h3>Object</h3>
-                <input type="text" id="inputObject">
-            </div>
-            <div class="box2">
-                <h3>Animal</h3>
-                <input type="text" id="inputAnimal">
-            </div>
-            <div class="box3">
-                <h3>Job</h3>
-                <input type="text" id="inputJob">
-            </div>
-            <div class="box3">
-                <h3>Country</h3>
-                <input type="text" id="inputCountry">
+            <div class="how-to-desc" id="desc">
+                <p>Once you click the start button a timer will fire, your task is to fill all text areas with words that match the title (eg: boy, girl), and the first letter of each word should match the given one.
+                    enjoy it, and have fun hunting bugs.
+                </p>
             </div>
         </div>
 
-        <div class="game-result">
-            <button class="btn check" onclick="getInputValue();">Check</button>
-            <h2 id="result"></h2>
-            <button class="btn" id="restart">restart</button>
+        <div class="game-header">
+            <div class="start">
+                <button class="start-game btn" id="start">Start</button>
+            </div>
+            
+            <div class="letter">
+                <p class="new-letter" id="letter"></p>
+            </div>
+
+            <div class="timer timer-grid" id="timer">
+                <div class="min" id="min"></div>
+                <div class="sec" id="sec"></div>
+            </div>
+
         </div>
         
-        
+        <div class="inputes">
+            <div class="input">
+                <label for="" class="label">Boy</label>
+                <input type="text" class="input-text">
+            </div>
+
+            <div class="input">
+                <label for="" class="label">Girl</label>
+                <input type="text" class="input-text">
+            </div>
+
+            <div class="input">
+                <label for="" class="label">Fruit</label>
+                <input type="text" class="input-text">
+            </div>
+
+            <div class="input">
+                <label for="" class="label">Vegetable</label>
+                <input type="text" class="input-text">
+            </div>
+
+            <div class="input">
+                <label for="" class="label">Object</label>
+                <input type="text" class="input-text">
+            </div>
+
+            <div class="input">
+                <label for="" class="label">Animal</label>
+                <input type="text" class="input-text">
+            </div>
+
+            <div class="input">
+                <label for="" class="label">Job</label>
+                <input type="text" class="input-text">
+            </div>
+
+            <div class="input">
+                <label for="" class="label">Country</label>
+                <input type="text" class="input-text">
+            </div>
+        </div>
+
+        <div class="game-footer">
+            <div class="check">
+                <button class="check-game btn" id="check">Check</button>
+            </div>
+            
+            <div class="result">
+                <p class="result" id="result"></p>
+            </div>
+
+            <div class="restart" id="restart">
+               <button class="restart btn">Restart</button>
+            </div>
+
+        </div>
     </div>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

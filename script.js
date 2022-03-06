@@ -1,9 +1,14 @@
-var downTimer = document.getElementById('timeout');
+var check = document.getElementById('check');
+check.addEventListener('click', getInputValue);
+check.disabled = true
+var downTimer = document.getElementById('timer');
 //generate random letter
 var char;
-var startGame = document.getElementById('startGame');
+var startGame = document.getElementById('start');
 
 startGame.addEventListener('click', function() {
+    startGame.disabled = true
+    check.disabled = false
     getNewLetter()
     countDown()
 });
@@ -11,9 +16,10 @@ startGame.addEventListener('click', function() {
 function getNewLetter() {
     const characters = 'abcdefghijklmnopqrstuvwxyz';
     char = characters[Math.floor(Math.random() * characters.length)];
-    var text = document.getElementById("new-letter");
+    var text = document.getElementById("letter");
+    text.style.display = 'block';
     text.innerHTML = "Your letter is: " + char;
-    downTimer.style.visibility = 'visible';
+    downTimer.style.display = 'grid';
 
     ///move to next field
     for (let i = 0; i < inputs.length; i++){
@@ -24,26 +30,28 @@ function getNewLetter() {
         }
     }
 }
+
 var inputs = document.querySelectorAll("input");
 //check first letter for every input
 let list = [];
 function getInputValue() {
+    downTimer.style.display = 'none';
     var flag = true;
     for (let i = 0; i < inputs.length; i++) {
         list.push(inputs[i].value);
     }
-    
-    for (let i = 0; i < inputs.length; i++) {
+    for (let i = 0; i < list.length; i++) {
+        
         if (list[i].charAt(0).toLowerCase() === char) {
-            inputs[i].style.background = '#00ff00';
-            document.getElementById("result").innerHTML = "win";
+            inputs[i].parentElement.style.background = '#7dffc2';
+            document.getElementById("result").innerHTML = "You Win";
         }
-
         else {
-            inputs[i].style.background = '#ff0000';
-            document.getElementById("result").innerHTML = "loss";
-        }
+            inputs[i].parentElement.style.background = '#ff7d7d';
+            document.getElementById("result").innerHTML = "Try again";
+        } 
     }   
+    
 }
 
 //restart
@@ -55,22 +63,29 @@ btnRestart.addEventListener('click', function(){
 //countdown timer
 
 function countDown() {
-    var minute = 2;
-    var sec = 0;
+
+    var min = document.getElementById('min');
+    var secc = document.getElementById('sec');
+
+    var minute = 1;
+    var sec = 59;
     setInterval(function() {
-        downTimer.innerHTML = minute + ":" + sec;
+        secc.innerHTML = sec;
+        min.innerHTML = minute;
         sec--;
         if (sec == -1) {
             minute--;
             sec = 59;
             if (minute == -1) {
-                downTimer.style.visibility = 'hidden';
+                downTimer.innerHTML = 'Time Over';
+                startGame.disabled = false;
             }
         }
         if (sec == 0 && minute == 0) {
+            downTimer.classList.add('time-over');
             getInputValue()
+            startGame.disabled = true
+            downTimer.classList.remove('timer-grid');
         }
     }, 1000);
 }
-
-
